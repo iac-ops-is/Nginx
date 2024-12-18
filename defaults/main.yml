@@ -1,0 +1,6 @@
+nginx_user: "www-data"
+nginx_worker_processes: "auto"
+nginx_worker_connections: 1024
+nginx_template_path: "templates/nginx.conf.j2"
+static_files_root: "/var/www/static"
+proxy_pass_target: "app_servers"
