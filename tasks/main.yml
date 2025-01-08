@@ -8,7 +8,7 @@
   apt:
     name: nginx
     state: present
-  become: yes
+  become: true
 
 - name: Deploy nginx.conf
   ansible.builtin.template:
@@ -20,7 +20,7 @@
     validate: /usr/sbin/nginx -t -c %s
   notify: Restart Nginx
 
-  - name: Ensure nginx is running
+- name: Ensure nginx is running
   ansible.builtin.service:
     name: nginx
     state: started
